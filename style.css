@@ -1,0 +1,3 @@
+body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+#game-container { border: 2px solid #333; padding: 20px; border-radius: 10px; width: 300px; text-align: center; }
+button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
