@@ -1,7 +1,16 @@
 // 1. Your data (The Array of Objects)
 const myQuestions = [
     {
-        question: "What does HTML stand for?",
+        question: "Which Git command sends local changes to GitHub?",
+        answers: ["git pull", "git dispatch", "git push"],
+        correct: 2
+    },
+    {
+        question: "What year was JavaScript created?",
+        answers: ["1995", "2005", "1985"],
+        correct: 0
+    },
+    {       question: "What does HTML stand for?",
         answers: ["Hyper Text Markup Language", "Hot Mail", "Home Tool Markup"],
         correct: 0
     },
@@ -33,3 +42,4 @@ function loadQuestion(index) {
 }
 
 loadQuestion(0); // Start with the first question
+
