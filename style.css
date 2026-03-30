@@ -1,46 +1,74 @@
-.hide {
-    display: none;
+body {
+    background-color: black;
+    font-family: 'Sour Gummy', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-body { background-color: black;color: white;font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; height: 75vh; margin: 0; }
-#game-container { background: #008080; color: white; border: 1px solid #444; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 350px; text-align: center; }
+
+#game-container {
+    background-color: #008080; /* Teal */
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    width: 450px;
+    min-height: 150px;
+}
+
 .question-header {
     display: flex;
-    justify-content: space-between; /* Pushes text left, button right */
-    align-items: center;           /* Centers them vertically */
-    gap: 15px;                     /* Space between question and button */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
 }
+
 #question {
-    margin-top: 5px;
-    text-align: left;
-    margin-bottom: 10px;
-    font-size: 1.2rem; /* Optional: shrink text slightly if it's too tall */
+    margin: 0;
+    font-size: 1.4rem;
+    flex: 1;
 }
-button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
+
 #next-btn {
-    width: auto;           /* Removes the 100% width */
-    padding: 5px 12px;     /* Smaller internal spacing */
-    font-size: 0.9rem;     /* Slightly smaller text */
-    margin: 20px auto 0;   /* Centers the button with some top spacing */
-    display: block;        /* Necessary for 'margin: auto' to center it */
+    background-color: #FF69B4; /* Hot Pink */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'Sour Gummy', sans-serif;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #FF69B4;
-    color: white;
-    border: 1px solid #666;
-    border-radius: 4px;
     white-space: nowrap;
+    transition: transform 0.2s, background-color 0.2s;
 }
+
 #next-btn:hover {
-    background-color: #FF1493; /* Deeper pink on hover */
-    transform: scale(1.05);    /* Slightly grows when hovered */
+    background-color: #FF1493;
+    transform: scale(1.05);
 }
+
 #answer-buttons button {
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
-    border: 1px solid white;
-    margin-bottom: 8px;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #answer-buttons button:hover {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hide {
+    display: none;
 }
