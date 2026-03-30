@@ -2,7 +2,7 @@
     display: none;
 }
 body { background-color: black;color: white;font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; height: 75vh; margin: 0; }
-#game-container { background: #222; color: white; border: 1px solid #444; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 350px; text-align: center; }
+#game-container { background: #008080; color: white; border: 1px solid #444; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 350px; text-align: center; }
 .question-header {
     display: flex;
     justify-content: space-between; /* Pushes text left, button right */
@@ -24,12 +24,23 @@ button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: poi
     margin: 20px auto 0;   /* Centers the button with some top spacing */
     display: block;        /* Necessary for 'margin: auto' to center it */
     cursor: pointer;
-    background-color: #444;
+    background-color: #FF69B4;
     color: white;
     border: 1px solid #666;
     border-radius: 4px;
     white-space: nowrap;
 }
 #next-btn:hover {
-    background-color: #666;
+    background-color: #FF1493; /* Deeper pink on hover */
+    transform: scale(1.05);    /* Slightly grows when hovered */
+}
+#answer-buttons button {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 8px;
+}
+
+#answer-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
