@@ -35,8 +35,10 @@ const myQuestions = [
 ];
 
 function loadQuestion() {
-    // Clear previous buttons
+    console.log("Loading question index:", currentQuestionIndex);
     answerBox.innerHTML = '';
+    
+    // Ensure the button is hidden when a new question starts
     nextBtn.classList.add('hide');
 
     const q = myQuestions[currentQuestionIndex];
@@ -51,17 +53,22 @@ function loadQuestion() {
 }
 
 function selectAnswer(selectedIndex, correctIndex) {
+    console.log("Answer selected. Correct index was:", correctIndex);
+    
     const allButtons = answerBox.querySelectorAll('button');
     allButtons.forEach(button => button.disabled = true);
 
     if(selectedIndex === correctIndex) {
-        score += 20; // Changed from ++ to += 20
-        scoreEl.innerText = `Score: ${score}`;
+        score += 20;
+        if(scoreEl) scoreEl.innerText = `Score: ${score}`;
         alert("Correct! +20 Points ✨");
     } else {
-        alert("Oops! 0 points for this one. 💡");
+        alert("Oops! 0 points. 💡");
     }
+
+    // THIS LINE MAKES THE BUTTON REAPPEAR
     nextBtn.classList.remove('hide');
+    console.log("Next button should now be visible.");
 }
 
 nextBtn.onclick = () => {
@@ -69,12 +76,10 @@ nextBtn.onclick = () => {
     if (currentQuestionIndex < myQuestions.length) {
         loadQuestion();
     } else {
-        // Calculate max possible score dynamically
         const maxScore = myQuestions.length * 20;
         questionEl.innerText = `Game Over! Final Score: ${score}/${maxScore}`;
         answerBox.innerHTML = '<button onclick="location.reload()">Play Again</button>';
         nextBtn.classList.add('hide');
-        scoreEl.classList.add('hide');
     }
 };
 
