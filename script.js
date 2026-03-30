@@ -55,6 +55,7 @@ const myQuestions = [
     {
 	question: "Which band’s name was inspired by a line from a The Wild One starring Marlon Brando?",
 	answers: ["Ratt", "Poison", "Warrant"],
+	correct: 0
     }
 ];
 
