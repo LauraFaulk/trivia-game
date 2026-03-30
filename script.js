@@ -6,7 +6,7 @@ let currentQuestionIndex = 0;
 
 const myQuestions = [
     {
-        question: "What was Elvis Presley’s first #1 hit in the U.S.?",
+        question: "What was Elvis Presley's first #1 hit in the U.S.?",
         answers: ["Hound Dog", "Heartbreak Hotel", "Jailhouse Rock"],
         correct: 1
     },
