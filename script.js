@@ -6,14 +6,29 @@ let currentQuestionIndex = 0;
 
 const myQuestions = [
     {
-        question: "What does HTML stand for?",
-        answers: ["Hyper Text Markup Language", "Hot Mail", "Home Tool Markup"],
+        question: "What was Elvis Presley’s first #1 hit in the U.S.?",
+        answers: ["Hound Dog", "Heartbreak Hotel", "Jailhouse Rock"],
+        correct: 1
+    },
+    {
+        question: "Which band released Smells Like Teen Spirit?",
+        answers: ["Nirvana", "Green Day", "Pearl Jam"],
         correct: 0
     },
     {
-        question: "Which language is used for styling?",
-        answers: ["Python", "CSS", "Java"],
-        correct: 1
+	question: "Which band's lead singers have included David Lee Roth & Sammy Hagar?",
+	answers: ["Metallica", "The Eagles", "Van Halen"],
+	correct: 2
+    },
+    {
+	question: "Which band released the song, Hotel California?",
+	answers: ["Nirvana", "The Eagles", "Styx"],
+	correct: 1
+    },
+    {
+	question: "Which song was NOT released by the supergroup made up of Tommy Shaw, Jack Blades, Ted Nugent, and Michael Cartellone?",
+	answers: ["High Enough", "Come Again", "Renegade"],
+	correct: 2
     }
 ];
 
