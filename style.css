@@ -9,3 +9,10 @@ body { background-color: black;color: white;font-family: Arial, sans-serif; disp
     font-size: 1.2rem; /* Optional: shrink text slightly if it's too tall */
 }
 button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
+#next-btn {
+    width: auto;           /* Removes the 100% width */
+    padding: 8px 16px;     /* Smaller internal spacing */
+    font-size: 0.9rem;     /* Slightly smaller text */
+    margin: 20px auto 0;   /* Centers the button with some top spacing */
+    display: block;        /* Necessary for 'margin: auto' to center it */
+}
