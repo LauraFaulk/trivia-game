@@ -3,16 +3,33 @@
 }
 body { background-color: black;color: white;font-family: Arial, sans-serif; display: flex; justify-content: center; padding-top: 50px; height: 75vh; margin: 0; }
 #game-container { background: #222; color: white; border: 1px solid #444; padding: 10px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 350px; text-align: center; }
+.question-header {
+    display: flex;
+    justify-content: space-between; /* Pushes text left, button right */
+    align-items: center;           /* Centers them vertically */
+    gap: 15px;                     /* Space between question and button */
+    margin-bottom: 20px;
+}
 #question {
     margin-top: 5px;
+    text-align: left;
     margin-bottom: 10px;
     font-size: 1.2rem; /* Optional: shrink text slightly if it's too tall */
 }
 button { display: block; width: 100%; margin: 10px 0; padding: 10px; cursor: pointer; }
 #next-btn {
     width: auto;           /* Removes the 100% width */
-    padding: 8px 16px;     /* Smaller internal spacing */
+    padding: 5px 12px;     /* Smaller internal spacing */
     font-size: 0.9rem;     /* Slightly smaller text */
     margin: 20px auto 0;   /* Centers the button with some top spacing */
     display: block;        /* Necessary for 'margin: auto' to center it */
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+#next-btn:hover {
+    background-color: #666;
 }
