@@ -50,11 +50,10 @@ function loadQuestion() {
 
 function selectAnswer(selectedIndex, correctIndex) {
     if(selectedIndex === correctIndex) {
-        alert("Correct!");
+        alert("Correct! ✨");
     } else {
-        alert("Wrong!");
+        alert("Oops! Try again. 💡");
     }
-    // Show the next button after an answer is picked
     nextBtn.classList.remove('hide');
 }
 
@@ -63,10 +62,11 @@ nextBtn.onclick = () => {
     if (currentQuestionIndex < myQuestions.length) {
         loadQuestion();
     } else {
-        questionEl.innerText = "Quiz Finished!";
+        questionEl.innerText = "Game Over! You're a pro! 🎉";
         answerBox.innerHTML = '';
         nextBtn.classList.add('hide');
     }
 };
 
+// Initial start
 loadQuestion();
