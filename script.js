@@ -1,8 +1,10 @@
 const questionEl = document.getElementById('question');
 const answerBox = document.getElementById('answer-buttons');
 const nextBtn = document.getElementById('next-btn');
+const scoreEl = document.getElementById('score-display');
 
 let currentQuestionIndex = 0;
+let score = 0;
 
 const myQuestions = [
     {
@@ -49,10 +51,15 @@ function loadQuestion() {
 }
 
 function selectAnswer(selectedIndex, correctIndex) {
+    const allButtons = answerBox.querySelectorAll('button');
+    allButtons.forEach(button => button.disabled = true);
+
     if(selectedIndex === correctIndex) {
-        alert("Correct! ✨");
+        score += 20; // Changed from ++ to += 20
+        scoreEl.innerText = `Score: ${score}`;
+        alert("Correct! +20 Points ✨");
     } else {
-        alert("Oops! Try again. 💡");
+        alert("Oops! 0 points for this one. 💡");
     }
     nextBtn.classList.remove('hide');
 }
@@ -62,11 +69,13 @@ nextBtn.onclick = () => {
     if (currentQuestionIndex < myQuestions.length) {
         loadQuestion();
     } else {
-        questionEl.innerText = "Game Over! You're a pro! 🎉";
-        answerBox.innerHTML = '';
+        // Calculate max possible score dynamically
+        const maxScore = myQuestions.length * 20;
+        questionEl.innerText = `Game Over! Final Score: ${score}/${maxScore}`;
+        answerBox.innerHTML = '<button onclick="location.reload()">Play Again</button>';
         nextBtn.classList.add('hide');
+        scoreEl.classList.add('hide');
     }
 };
 
-// Initial start
 loadQuestion();
