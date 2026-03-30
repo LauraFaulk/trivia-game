@@ -31,6 +31,30 @@ const myQuestions = [
 	question: "Which song was NOT released by the supergroup made up of Tommy Shaw, Jack Blades, Ted Nugent, and Michael Cartellone?",
 	answers: ["High Enough", "Come Again", "Renegade"],
 	correct: 2
+    },
+    {
+	question: "Which singer fronted Skid Row during their late-80s rise?",
+	answers: ["Joe Elliott", "Sebastian Bach", "Jani Lane"],
+	correct: 1
+    },
+    {
+	question: "Which member of Queen wrote Another One Bites the Dust?",
+	answers: ["John Deacon", "Freddie Mercury", "Brian May"],
+	correct: 0
+    },
+    {
+	question: "Who played the iconic guitar solo on Beat It by Michael Jackson?",
+	answers: ["Joe Satriani", "Steve Vai", "Eddie Van Halen"],
+	correct: 2
+    },
+    {
+	question: "Which band had a hit with “Turn Up the Radio”?",
+	answers: ["Night Ranger", "Autograph", "Y&T"],
+	correct: 1
+    },
+    {
+	question: "Which band’s name was inspired by a line from a The Wild One starring Marlon Brando?",
+	answers: ["Ratt", "Poison", "Warrant"],
     }
 ];
 
