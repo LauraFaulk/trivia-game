@@ -84,27 +84,31 @@ const myQuestions = [
     }
 ];
 
-function shuffleQuestions(array) {
+function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
+// 2. START GAME (Shuffles first!)
 function startGame() {
+    console.log("Game Starting... Shuffling questions.");
     currentQuestionIndex = 0;
     score = 0;
-    // Shuffle the array before loading the first question
-    shuffleQuestions(myQuestions); 
+    scoreEl.innerText = "Score: 0%";
+    
+    shuffleArray(myQuestions); // Shuffles the master list
     loadQuestion();
 }
 
 function loadQuestion() {
     answerBox.innerHTML = '';
     nextBtn.classList.add('hide');
+
     const q = myQuestions[currentQuestionIndex];
     questionEl.innerText = q.question;
-
+    
     q.answers.forEach((text, i) => {
         const btn = document.createElement('button');
         btn.innerText = text;
@@ -117,17 +121,13 @@ function selectAnswer(selectedIndex, correctIndex) {
     const allButtons = answerBox.querySelectorAll('button');
     allButtons.forEach(button => button.disabled = true);
 
-    // Calculate how much % each question is worth
     const pointsPerQuestion = 100 / myQuestions.length;
 
     if(selectedIndex === correctIndex) {
         score += pointsPerQuestion;
-        // Math.round keeps it from showing messy decimals like 33.33333
         scoreEl.innerText = `Score: ${Math.round(score)}%`;
-        alert(`Correct! +${Math.round(pointsPerQuestion)}% ✨`);
-    } else {
-        alert("Oops! 0% for this one. 💡");
     }
+    
     nextBtn.classList.remove('hide');
 }
 
@@ -136,12 +136,11 @@ nextBtn.onclick = () => {
     if (currentQuestionIndex < myQuestions.length) {
         loadQuestion();
     } else {
-        // Final Results Screen
-        questionEl.innerText = `Game Over! Final Grade: ${Math.round(score)}%`;
-        answerBox.innerHTML = '<button onclick="location.reload()">Restart Quiz</button>';
+        questionEl.innerText = `All done! Final Score: ${Math.round(score)}%`;
+        answerBox.innerHTML = '<button onclick="location.reload()">Play Again</button>';
         nextBtn.classList.add('hide');
-        scoreEl.classList.add('hide');
     }
 };
 
-loadQuestion();
+// 3. RUN THE START FUNCTION
+startGame();
