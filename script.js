@@ -64,22 +64,22 @@ const myQuestions = [
     },
     {
 	question: "Which Salt-N-Pepa track from Very Necessary became  one of their biggest crossover hits?",
-	answers: ["Push It", "Shoop", "Whatta Man"]
+	answers: ["Push It", "Shoop", "Whatta Man"],
 	correct: 1
     },
     {
 	question: "Who produced the hit song “California Love” by Tupac Shakur?",
-	answers: ["RZA", "Snoop Dogg", "Dr Dre"]
+	answers: ["RZA", "Snoop Dogg", "Dr Dre"],
 	correct: 2
     },
     {
 	question: "Which band featured Michael McDonald as a key member during its peak?",
-	answers: ["Doobie Brothers", "The Eagles", "Foreigner"]
+	answers: ["Doobie Brothers", "The Eagles", "Foreigner"],
 	correct:0
     },
     {
 	question: "Which song, made popular by Reba McEntire, was about a young girl preparing to leave home in a red dress and a heart-shaped locket?",
-	answers: ["Fancy", "Delta Dawn", "Jolene"]
+	answers: ["Fancy", "Delta Dawn", "Jolene"],
 	correct:0
     }
 ];
