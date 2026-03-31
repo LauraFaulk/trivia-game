@@ -100,15 +100,11 @@ function startGame() {
 }
 
 function loadQuestion() {
-    console.log("Loading question index:", currentQuestionIndex);
     answerBox.innerHTML = '';
-    
-    // Ensure the button is hidden when a new question starts
     nextBtn.classList.add('hide');
-
     const q = myQuestions[currentQuestionIndex];
     questionEl.innerText = q.question;
-    
+
     q.answers.forEach((text, i) => {
         const btn = document.createElement('button');
         btn.innerText = text;
