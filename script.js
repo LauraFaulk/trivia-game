@@ -84,6 +84,21 @@ const myQuestions = [
     }
 ];
 
+function shuffleQuestions(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function startGame() {
+    currentQuestionIndex = 0;
+    score = 0;
+    // Shuffle the array before loading the first question
+    shuffleQuestions(myQuestions); 
+    loadQuestion();
+}
+
 function loadQuestion() {
     console.log("Loading question index:", currentQuestionIndex);
     answerBox.innerHTML = '';
