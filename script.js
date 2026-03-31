@@ -53,22 +53,21 @@ function loadQuestion() {
 }
 
 function selectAnswer(selectedIndex, correctIndex) {
-    console.log("Answer selected. Correct index was:", correctIndex);
-    
     const allButtons = answerBox.querySelectorAll('button');
     allButtons.forEach(button => button.disabled = true);
 
-    if(selectedIndex === correctIndex) {
-        score += 20;
-        if(scoreEl) scoreEl.innerText = `Score: ${score}`;
-        alert("Correct! +20 Points ✨");
-    } else {
-        alert("Oops! 0 points. 💡");
-    }
+    // Calculate how much % each question is worth
+    const pointsPerQuestion = 100 / myQuestions.length;
 
-    // THIS LINE MAKES THE BUTTON REAPPEAR
+    if(selectedIndex === correctIndex) {
+        score += pointsPerQuestion;
+        // Math.round keeps it from showing messy decimals like 33.33333
+        scoreEl.innerText = `Score: ${Math.round(score)}%`;
+        alert(`Correct! +${Math.round(pointsPerQuestion)}% ✨`);
+    } else {
+        alert("Oops! 0% for this one. 💡");
+    }
     nextBtn.classList.remove('hide');
-    console.log("Next button should now be visible.");
 }
 
 nextBtn.onclick = () => {
@@ -76,10 +75,11 @@ nextBtn.onclick = () => {
     if (currentQuestionIndex < myQuestions.length) {
         loadQuestion();
     } else {
-        const maxScore = myQuestions.length * 20;
-        questionEl.innerText = `Game Over! Final Score: ${score}/${maxScore}`;
-        answerBox.innerHTML = '<button onclick="location.reload()">Play Again</button>';
+        // Final Results Screen
+        questionEl.innerText = `Game Over! Final Grade: ${Math.round(score)}%`;
+        answerBox.innerHTML = '<button onclick="location.reload()">Restart Quiz</button>';
         nextBtn.classList.add('hide');
+        scoreEl.classList.add('hide');
     }
 };
 
